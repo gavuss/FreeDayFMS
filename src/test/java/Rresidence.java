@@ -5,10 +5,11 @@ import pages.start.StartPage;
 /**
  * Created by Alexander Silaev on 25.05.2016.
  */
-public class Rresidence extends BaseTest {
+public class Rresidence extends BaseTest implements Runnable{
 
     @Test
-    public void residence() {
+    @Override
+    public void run() {
         open(StartPage.class)
                 .confirm()
                 .then().makeAppointment("УФМС России по г. Москве", "Разрешение на временное проживание", "Подача документов", "ул. Новослободская д. 45Б");
